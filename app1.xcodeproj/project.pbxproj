@@ -14,6 +14,8 @@
 		202C2AA828EFCC46005296B1 /* app1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AA728EFCC46005296B1 /* app1Tests.swift */; };
 		202C2AB228EFCC46005296B1 /* app1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AB128EFCC46005296B1 /* app1UITests.swift */; };
 		202C2AB428EFCC46005296B1 /* app1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AB328EFCC46005296B1 /* app1UITestsLaunchTests.swift */; };
+		202C2AC128EFCCB6005296B1 /* webviewcore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AC028EFCCB6005296B1 /* webviewcore.swift */; };
+		202C2AC328EFCCF1005296B1 /* multitabview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AC228EFCCF1005296B1 /* multitabview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		202C2AAD28EFCC46005296B1 /* app1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		202C2AB128EFCC46005296B1 /* app1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app1UITests.swift; sourceTree = "<group>"; };
 		202C2AB328EFCC46005296B1 /* app1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		202C2AC028EFCCB6005296B1 /* webviewcore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webviewcore.swift; sourceTree = "<group>"; };
+		202C2AC228EFCCF1005296B1 /* multitabview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multitabview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				202C2A9628EFCC42005296B1 /* app1App.swift */,
 				202C2A9828EFCC42005296B1 /* ContentView.swift */,
+				202C2AC028EFCCB6005296B1 /* webviewcore.swift */,
+				202C2AC228EFCCF1005296B1 /* multitabview.swift */,
 				202C2A9A28EFCC46005296B1 /* Assets.xcassets */,
 				202C2A9C28EFCC46005296B1 /* Preview Content */,
 			);
@@ -257,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202C2AC128EFCCB6005296B1 /* webviewcore.swift in Sources */,
 				202C2A9928EFCC42005296B1 /* ContentView.swift in Sources */,
+				202C2AC328EFCCF1005296B1 /* multitabview.swift in Sources */,
 				202C2A9728EFCC42005296B1 /* app1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
