@@ -12,15 +12,15 @@ struct MultiTabView: View {
         TabView{
             WebView(url:URL(string:"https://aiclub.world/privacy")!)
                 .tabItem{
-                    Label("Web page",systemImage: "camera.circle")
+                    Label("Info",systemImage: "info.circle.fill")
                 }
             ContentView()
                 .tabItem{
-                    Label("Form",systemImage: "list.number")
+                    Label("Watering",systemImage: "leaf.circle.fill")
                 }
             Tab3View()
                 .tabItem{
-                    Label("Tab 3",systemImage: "keyboard")
+                    Label("Credits",systemImage: "person.crop.circle.fill.badge.checkmark")
                 }
         }
     }
