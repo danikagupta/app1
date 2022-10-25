@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Button("Hello, world!") {
+            let treeName="Apple"
+            let kcValue=LoadPlantData.getKc(treeName)
+            print("Just saw kc=\(kcValue)")
+        }
     }
 }
 
