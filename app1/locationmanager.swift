@@ -7,10 +7,13 @@
 
 import CoreLocation
 import MapKit
+import SwiftUI
 
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
+    @AppStorage("lat") var lat=0.0
+    @AppStorage("lon") var lon=0.0
 
     @Published var location: CLLocationCoordinate2D?
     @Published var area=MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.5, longitude: -121.9), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
@@ -30,6 +33,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             return
         }
         print("Got updated Location information: \(location)")
+        lat=location.latitude
+        lon=location.longitude
         area=MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     }
     

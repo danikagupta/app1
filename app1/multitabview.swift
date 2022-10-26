@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct MultiTabView: View {
+    @AppStorage("lat") var lat=0.0
+    @AppStorage("lon") var lon=0.0
     var body: some View {
-        TabView{
-            WebView(url:URL(string:"https://aiclub.world/privacy")!)
-                .tabItem{
-                    Label("Info",systemImage: "info.circle.fill")
-                }
-            ContentView()
-                .tabItem{
-                    Label("Watering",systemImage: "leaf.circle.fill")
-                }
-            Tab3View()
-                .tabItem{
-                    Label("Credits",systemImage: "person.crop.circle.fill.badge.checkmark")
-                }
+        
+        ZStack {
+            Color.blue.opacity(0.2).ignoresSafeArea()
+            TabView{
+                WebView(url:URL(string:"https://aquaedge.app/")!)
+                    .tabItem{
+                        Label("Info",systemImage: "info.circle.fill")
+                    }
+                ContentView()
+                    .tabItem{
+                        Label("Watering",systemImage: "leaf.circle.fill")
+                    }
+                Tab3View()
+                    .tabItem{
+                        Label("Weather",systemImage: "cloud.rain.circle")
+                    }
+            }
         }
     }
 }
@@ -39,8 +45,13 @@ struct Tab2View: View {
 }
 
 struct Tab3View: View {
+    @AppStorage("lat") var lat=0.0
+    @AppStorage("lon") var lon=0.0
     var body: some View {
-        Text("Page 3")
+        ZStack {
+            Color.blue.opacity(0.20).ignoresSafeArea()
+            WebView(url:URL(string:"https://forecast.weather.gov/MapClick.php?textField1=\(lat)&textField2=\(lon)")!)
+        }
     }
 }
 
