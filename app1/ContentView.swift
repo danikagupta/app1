@@ -22,6 +22,7 @@ struct ContentView: View {
     @State var visibleStatus = "Click on the green button to start"
     @State var visibleLog = " "
     
+    @State private var showingUpload = true
     @State private var showingImagePicker = false
     @State private var showingMap = true
     @State private var inputImage: UIImage? = UIImage(systemName: "list")
@@ -39,21 +40,24 @@ struct ContentView: View {
             Color.blue.opacity(0.2)
                 .ignoresSafeArea()
             VStack {
-                Text("Aqua Folia")
+                Text("AquaTamer")
                     .font(.system(size:40))
                     .foregroundColor(.blue)
-                Button("Upload picture"){
-                    self.buttonPressed()
-                }
-                .padding(.all, 14.0)
-                .foregroundColor(.white)
-                .background(Color.green)
+                if showingUpload {
+                    Button("Upload picture"){
+                        self.buttonPressed()
+                    }
+                    .padding(.all, 14.0)
+                    .foregroundColor(.white)
+                    .background(Color.green)
                 .cornerRadius(10)
+                }
                 
                 
                 if let inputImage=inputImage {
                     Image(uiImage: inputImage).resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 400.0)
+                        .aspectRatio(contentMode: .fill)
                 }
                 
                 if showLocationButton {
@@ -92,6 +96,7 @@ struct ContentView: View {
         
         self.showingImagePicker = true
         showingMap = false
+        showingUpload = false
     }
     
     func processAIResult(_ result:String) {
@@ -209,6 +214,7 @@ struct ContentView: View {
         let minutesPerWeek=calculatedET*kcFactor*SQFEET_TO_GALLON*AVG_SQ_FEET/(GALLONS_PER_MINUTE*30.0/7.0)
         minutesWatering="\(minutesPerWeek)"
         visibleStatus=String(format: "Water \(treeName) for %.0f minutes this week", minutesPerWeek)
+        showingUpload = true
         
     }
     

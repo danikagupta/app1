@@ -15,7 +15,7 @@ struct MultiTabView: View {
         ZStack {
             Color.blue.opacity(0.2).ignoresSafeArea()
             TabView{
-                WebView(url:URL(string:"https://aquaedge.app/")!)
+                WebView(url:URL(string:"https://sites.google.com/students.harker.org/aquatamer/aquatamer")!)
                     .tabItem{
                         Label("Info",systemImage: "info.circle.fill")
                     }
