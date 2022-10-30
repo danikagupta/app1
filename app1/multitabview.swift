@@ -15,18 +15,34 @@ struct MultiTabView: View {
         ZStack {
             Color.blue.opacity(0.2).ignoresSafeArea()
             TabView{
+                /*
                 WebView(url:URL(string:"https://sites.google.com/students.harker.org/aquatamer/aquatamer")!)
                     .tabItem{
                         Label("Info",systemImage: "info.circle.fill")
                     }
-                ContentView()
+                 */
+                WebView(url:URL(string:"https://sites.google.com/students.harker.org/aquatamer/the-problem")!)
                     .tabItem{
-                        Label("Watering",systemImage: "leaf.circle.fill")
+                        Label("Drought",systemImage: "leaf.circle.fill")
+                    }
+                AskAIView()
+                    .tabItem{
+                        Label("Calculate",systemImage: "sprinkler.and.droplets.fill")
                     }
                 Tab3View()
                     .tabItem{
                         Label("Weather",systemImage: "cloud.rain.circle")
                     }
+                /*
+                WebView(url:URL(string:"https://sites.google.com/students.harker.org/aquatamer/our-solution")!)
+                    .tabItem{
+                        Label("Solution",systemImage: "info.circle.fill")
+                    }
+                WebView(url:URL(string:"https://sites.google.com/students.harker.org/aquatamer/learning-more")!)
+                    .tabItem{
+                        Label("Learn more",systemImage: "info.circle.fill")
+                    }
+                 */
             }
         }
     }

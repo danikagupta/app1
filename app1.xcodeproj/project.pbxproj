@@ -16,6 +16,7 @@
 		202C2AB428EFCC46005296B1 /* app1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AB328EFCC46005296B1 /* app1UITestsLaunchTests.swift */; };
 		202C2AC128EFCCB6005296B1 /* webviewcore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AC028EFCCB6005296B1 /* webviewcore.swift */; };
 		202C2AC328EFCCF1005296B1 /* multitabview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C2AC228EFCCF1005296B1 /* multitabview.swift */; };
+		AA51523B290EE40A0036911E /* AskAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51523A290EE40A0036911E /* AskAIView.swift */; };
 		AAE779A22907573200BE68CC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AAE779A12907573200BE68CC /* SwiftyJSON */; };
 		AAE779A52907574300BE68CC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AAE779A42907574300BE68CC /* Alamofire */; };
 		AAE779A72907579C00BE68CC /* imagepicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE779A62907579C00BE68CC /* imagepicker.swift */; };
@@ -54,6 +55,7 @@
 		202C2AB328EFCC46005296B1 /* app1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		202C2AC028EFCCB6005296B1 /* webviewcore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webviewcore.swift; sourceTree = "<group>"; };
 		202C2AC228EFCCF1005296B1 /* multitabview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multitabview.swift; sourceTree = "<group>"; };
+		AA51523A290EE40A0036911E /* AskAIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAIView.swift; sourceTree = "<group>"; };
 		AAE779A62907579C00BE68CC /* imagepicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagepicker.swift; sourceTree = "<group>"; };
 		AAE779A82907583500BE68CC /* locationmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationmanager.swift; sourceTree = "<group>"; };
 		AAE779AA29075A7700BE68CC /* plantkcvalues.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = plantkcvalues.csv; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				202C2A9628EFCC42005296B1 /* app1App.swift */,
 				202C2A9828EFCC42005296B1 /* ContentView.swift */,
+				AA51523A290EE40A0036911E /* AskAIView.swift */,
 				AAE779AC29075AAB00BE68CC /* loadplantdata.swift */,
 				AAE779A62907579C00BE68CC /* imagepicker.swift */,
 				AAE779A82907583500BE68CC /* locationmanager.swift */,
@@ -294,6 +297,7 @@
 				202C2AC128EFCCB6005296B1 /* webviewcore.swift in Sources */,
 				202C2A9928EFCC42005296B1 /* ContentView.swift in Sources */,
 				202C2AC328EFCCF1005296B1 /* multitabview.swift in Sources */,
+				AA51523B290EE40A0036911E /* AskAIView.swift in Sources */,
 				202C2A9728EFCC42005296B1 /* app1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

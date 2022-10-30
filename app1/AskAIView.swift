@@ -1,11 +1,9 @@
 //
-//  ContentView.swift
+//  AskAIView.swift
 //  app1
 //
-//  Created by Dani Gupta on 10/6/22.
+//  Created by Dani Gupta on 10/30/22.
 //
-
-/*
 
 import SwiftUI
 import Alamofire
@@ -15,20 +13,23 @@ import CoreLocationUI
 import MapKit
 
 
-struct ContentView: View {
+struct AskAIView: View {
     @StateObject var locationManager = LocationManager()
     
     @State var tracking=MapUserTrackingMode.follow
     @State var annotation=MKPointAnnotation()
     
     @State var visibleStatus = "Click on the green button to start"
+    @State var uploadLabel = "Select plant"
     @State var visibleLog = " "
     
     @State private var showingUpload = true
     @State private var showingImagePicker = false
     @State private var showingMap = true
-    @State private var inputImage: UIImage? = UIImage(systemName: "list")
     @State private var showLocationButton = false
+    
+    @State private var inputImage: UIImage? = UIImage(systemName: "list")
+
     @State private var treeName=""
     @State private var minutesWatering=""
     
@@ -45,21 +46,36 @@ struct ContentView: View {
                 Text("AquaTamer")
                     .font(.system(size:40))
                     .foregroundColor(.blue)
-                if showingUpload {
-                    Button("Upload picture"){
-                        self.buttonPressed()
-                    }
-                    .padding(.all, 14.0)
-                    .foregroundColor(.white)
-                    .background(Color.green)
-                .cornerRadius(10)
-                }
+                Text(visibleStatus)
+                    .padding(10)
+                    .foregroundColor(.blue)
+                    .background(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+
                 
                 
                 if let inputImage=inputImage {
                     Image(uiImage: inputImage).resizable()
                         .frame(height: 400.0)
                         .aspectRatio(contentMode: .fill)
+                }
+
+                
+                if showMap() {
+                    Map(coordinateRegion:$locationManager.area, interactionModes: .all, showsUserLocation: true, userTrackingMode: $tracking, annotationItems: [annotation.coordinate]) {_ in
+                        MapMarker(coordinate: CLLocationCoordinate2D(latitude: locationManager.location!.latitude, longitude: locationManager.location!.longitude))
+                    }
+                }
+
+                Spacer()
+                if showingUpload {
+                    Button(uploadLabel){
+                        self.buttonPressed()
+                    }
+                    .padding(.all, 14.0)
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                .cornerRadius(10)
                 }
                 
                 if showLocationButton {
@@ -74,19 +90,7 @@ struct ContentView: View {
                     }
                     .frame(height: 44)
                 }
-                
-                if showMap() {
-                    Map(coordinateRegion:$locationManager.area, interactionModes: .all, showsUserLocation: true, userTrackingMode: $tracking, annotationItems: [annotation.coordinate]) {_ in
-                        MapMarker(coordinate: CLLocationCoordinate2D(latitude: locationManager.location!.latitude, longitude: locationManager.location!.longitude))
-                    }
-                }
 
-                Spacer()
-                Text(visibleStatus)
-                    .padding(10)
-                    .foregroundColor(.blue)
-                    .background(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
             }
         }.sheet(isPresented: $showingImagePicker, onDismiss: processImage) {
             ImagePicker(image: self.$inputImage)
@@ -104,7 +108,7 @@ struct ContentView: View {
     func processAIResult(_ result:String) {
         print("In processAIResult, with result=\(result)")
         treeName=result
-        visibleStatus = "Identified \(treeName). Next step: Location"
+        visibleStatus = "Identified \(treeName). Click on Location button."
         showLocationButton = true
 
     }
@@ -216,6 +220,7 @@ struct ContentView: View {
         let minutesPerWeek=calculatedET*kcFactor*SQFEET_TO_GALLON*AVG_SQ_FEET/(GALLONS_PER_MINUTE*30.0/7.0)
         minutesWatering="\(minutesPerWeek)"
         visibleStatus=String(format: "Water \(treeName) for %.0f minutes this week", minutesPerWeek)
+        uploadLabel = "Select next plant"
         showingUpload = true
         
     }
@@ -232,10 +237,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AskAIView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AskAIView()
     }
 }
-
-*/
